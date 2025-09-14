@@ -1,9 +1,9 @@
 # IDE settings
-*/.idea/
-*/.vscode/
+**/.idea/
+**/.vscode/
 
 # Environmental variables
-*/.env
+**/.env
 
 # Virtual environments
 */.venv/
