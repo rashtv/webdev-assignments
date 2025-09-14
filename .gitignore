@@ -6,8 +6,11 @@
 **/.env
 
 # Virtual environments
-*/.venv/
-*/venv/
+**/.venv/
+**/venv/
 
 # JavaScript packages
-*/node_modules/
+**/node_modules/
+
+# Redis
+**/cache/
