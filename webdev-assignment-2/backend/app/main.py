@@ -1,3 +1,4 @@
+import os
 import uuid
 import json
 
@@ -9,9 +10,9 @@ from fastapi import FastAPI
 app: FastAPI = FastAPI()
 
 r = redis.Redis(
-    host="redis",
-    port=6379,
-    db=0,
+    host=os.getenv("REDIS_HOST"),
+    port=os.getenv("REDIS_PORT"),
+    db=os.getenv("REDIS_DB"),
     decode_responses=True,
 )
 

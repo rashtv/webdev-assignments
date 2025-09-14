@@ -4,8 +4,13 @@ services:
     build: 
       context: backend/
       dockerfile: Dockerfile
+    env_file:
+      - ./backend/.env
     ports:
       - "8000:8000"
+    networks:
+      - webdev_network
+      - backend_network
 
   frontend:
     container_name: frontend
@@ -14,12 +19,16 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5173:5173"
+    networks:
+      - webdev_network
 
   redis:
     container_name: redis
     image: redis:8.2.1-bookworm
     volumes:
       - ./cache:/data:rw
+    networks:
+      - backend_network
 
 networks:
   webdev_network:
