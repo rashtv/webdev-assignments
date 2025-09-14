@@ -1,0 +1,29 @@
+services:
+  backend:
+    container_name: backend
+    build: 
+      context: backend/
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+
+  frontend:
+    container_name: frontend
+    build: 
+      context: frontend/
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+
+  redis:
+    container_name: redis
+    image: redis:8.2.1-bookworm
+    volumes:
+      - ./cache:/data:rw
+
+networks:
+  webdev_network:
+    external: false
+  
+  backend_network:
+    external: false
