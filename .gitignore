@@ -1,0 +1,13 @@
+# IDE settings
+*/.idea/
+*/.vscode/
+
+# Environmental variables
+*/.env
+
+# Virtual environments
+*/.venv/
+*/venv/
+
+# JavaScript packages
+*/node_modules/
